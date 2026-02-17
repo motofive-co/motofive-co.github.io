@@ -72,35 +72,42 @@
     function getImagePath(item) {
         let basePath = CONFIG.useSubfolder ? '/Hunk160R' : '';
         return `${basePath}/assets/img/${item.image}`;
-    }
-    // ==============================================
-    // FUNCIÓN PRINCIPAL: Crear mensaje con formato de tarjeta
-    // ==============================================
-
+      }
+     // ==============================================
+     // FUNCIÓN PRINCIPAL MEJORADA: Crear mensaje con vista previa
+     // ==============================================
     function createVisualCard(item) {
+        // YA NO enviamos la URL directa de la imagen
+        // En su lugar, enviamos la URL de nuestra página preview.html con parámetros
+        
+        // Codificar la descripción para la URL
+        const encodedDesc = encodeURIComponent(item.description);
+        
+        // Construir la URL de la página de vista previa
+        const previewUrl = `${CONFIG.siteUrl}/preview.html?num=${item.number}&desc=${encodedDesc}&img=${item.image}&cat=${item.category}`;
+        
+        // Crear el mensaje con el nuevo formato
+        const message = `🔧 MOTOFIVE - SOLICITUD DE INFORMACIÓN - HERO HUNK 160R 🔧
 
-    // Construir la URL completa de la imagen
-    const imageUrl = `${CONFIG.siteUrl}${CONFIG.useSubfolder ? '/Hunk160R' : ''}/assets/img/${item.image}`;
-    
-    // Crear el mensaje con el formato exacto
-    const message = `🔧 MOTOFIVE - SOLICITUD DE INFORMACIÓN - HERO HUNK 160R 🔧
+        ━━━━━━━━━━━━━━━━━━━━━
+        📦 *REPUESTO CONSULTADO:*
+        └─ ${item.description}
 
-    📸 IMAGEN DE REFERENCIA:
-    └─ ${imageUrl}
-    ━━━━━━━━━━━━━━━━━━━━━
-    📦 DESCRIPCIÓN: 
-    └─ ${item.description}
-    🆔 NÚMERO DE PARTE: 
-    └─ ${item.number}
+        🆔 *NÚMERO DE PARTE:* 
+        └─ ${item.number}
 
-    ━━━━━━━━━━━━━━━━━━━━━
-    ⏱️ Fecha: ${new Date().toLocaleDateString('es-MX')}
-    📍 Tienda: MOTOFIVE México
+        ━━━━━━━━━━━━━━━━━━━━━
+        🔗 *VER IMAGEN Y DETALLES:* 
+        ${previewUrl}
+        ━━━━━━━━━━━━━━━━━━━━━
 
-    _🔍 Solicito Info_`;
+        ⏱️ Fecha: ${new Date().toLocaleDateString('es-MX')}
+        📍 Tienda: MOTOFIVE México
 
-    return encodeURIComponent(message);
-  }
+        _🔍 Quedo atento a disponibilidad y precio_`;
+
+            return encodeURIComponent(message);
+        }
 
     // ==============================================
     // FUNCIÓN: Redirigir a WhatsApp con la tarjeta
