@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOTOFIVE - Repuesto HUNK 160R</title>
+    
+    <!-- Open Graph / WhatsApp Meta Tags -->
+    <meta property="og:title" content="MOTOFIVE - Repuesto HUNK 160R">
+    <meta property="og:description" content="Consulta de repuesto para Hero Hunk 160R">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="https://motofive-co.github.io/preview.html">
+    <meta property="og:type" content="product">
+    <meta property="og:site_name" content="MOTOFIVE">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .card {
+            background: #1e1e1e;
+            border-radius: 30px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            border: 2px solid #ff3300;
+            box-shadow: 0 20px 40px rgba(255, 51, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Efecto de brillo */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,51,0,0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .brand {
+            color: #ff3300;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255,51,0,0.5);
+        }
+        
+        .model {
+            color: #888;
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        
+        .image-container {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 25px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid #ff3300;
+            background: #000;
+        }
+        
+        #product-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+        
+        #product-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .info {
+            position: relative;
+            z-index: 1;
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            margin-bottom: 20px;
+        }
+        
+        .part-number {
+            font-family: 'Courier New', monospace;
+            font-size: 28px;
+            color: #ff3300;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .description {
+            font-size: 18px;
+            text-align: center;
+            color: #fff;
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+        
+        .details {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .whatsapp-btn {
+            position: relative;
+            z-index: 1;
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        .footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+        
+        .footer p {
+            margin: 5px 0;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #ff3300;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="brand">MOTOFIVE</div>
+            <div class="model">HERO HUNK 160R</div>
+        </div>
+        
+        <div class="image-container">
+            <img id="product-image" src="" alt="Repuesto Hunk 160R">
+        </div>
+        
+        <div class="info">
+            <div class="badge">🔧 CONSULTA DE REPUESTO</div>
+            <div class="part-number" id="part-number">Cargando...</div>
+            <div class="description" id="description">Cargando información...</div>
+        </div>
+        
+        <div class="details">
+            <span>📍 Zapopan, Jalisco</span>
+            <span>⚡ Envío a todo México</span>
+        </div>
+        
+        <a href="#" id="whatsapp-link" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Consultar por WhatsApp
+        </a>
+        
+        <div class="footer">
+            <p>📞 33 2026 7983</p>
+            <p>⏰ WhatsApp 24/7 - Taller: Lun-Vie 9-19, Sáb 9-14</p>
+        </div>
+    </div>
+
+    <script>
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                num: params.get('num') || 'C00000000',
+                desc: params.get('desc') || 'Repuesto Hunk 160R',
+                img: params.get('img') || 'C00000000.png',
+                cat: params.get('cat') || 'general'
+            };
+        }
+
+        function loadProductData() {
+            const params = getUrlParams();
+            const baseUrl = 'https://motofive-co.github.io';
+            const imageUrl = `${baseUrl}/assets/img/${params.img}`;
+            const decodedDesc = decodeURIComponent(params.desc);
+            
+            // Actualizar elementos
+            document.getElementById('part-number').textContent = params.num;
+            document.getElementById('description').textContent = decodedDesc;
+            document.getElementById('product-image').src = imageUrl;
+            
+            // Actualizar meta tags para WhatsApp
+            document.querySelector('meta[property="og:title"]').setAttribute('content', `MOTOFIVE - Repuesto ${params.num}`);
+            document.querySelector('meta[property="og:description"]').setAttribute('content', decodedDesc.substring(0, 100));
+            document.querySelector('meta[property="og:image"]').setAttribute('content', imageUrl);
+            document.querySelector('meta[property="og:url"]').setAttribute('content', window.location.href);
+            
+            // Actualizar título
+            document.title = `MOTOFIVE - ${params.num}`;
+            
+            // Actualizar enlace de WhatsApp
+            const message = encodeURIComponent(
+                `Hola, vi el repuesto *${params.num}* - *${decodedDesc}* en el catálogo de MOTOFIVE y me interesa.`
+            );
+            document.getElementById('whatsapp-link').href = `https://wa.me/3320267983?text=${message}`;
+        }
+
+        window.onload = loadProductData;
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</body>
+</html>
